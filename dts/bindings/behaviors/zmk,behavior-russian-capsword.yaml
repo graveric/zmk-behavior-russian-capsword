@@ -1,0 +1,15 @@
+# Copyright (c) 2026 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: Russian caps word behavior
+
+compatible: "zmk,behavior-russian-capsword"
+
+include: zero_param.yaml
+
+properties:
+  continue-list:
+    type: array
+    required: true
+  mods:
+    type: int
