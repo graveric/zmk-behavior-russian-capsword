@@ -98,6 +98,10 @@ Targets ZMK `v0.3` (release tag `v0.3`, branch `v0.3-branch`). Requires the mode
 `zmk_keycode_state_changed` event API (`implicit_modifiers`), available in all releases
 from `v0.1`.
 
+Like the built-in `&caps_word`, on split keyboards this behavior is compiled and runs
+on the central (left) half only; the peripheral half is unaffected. This mirrors how
+ZMK itself gates its `caps_word` behavior.
+
 ## Implementation
 
 This module is a modified copy of ZMK's built-in
