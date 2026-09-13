@@ -48,13 +48,7 @@ Then run `west update`.
 
 ### 2. Enable the behavior
 
-Add the predefined behavior instance to your keymap. Either include the shipped file:
-
-```c
-#include <behaviors/rus_caps_word.dtsi>
-```
-
-or define the node yourself:
+Add the predefined behavior instance to your keymap like
 
 ```
 / {
@@ -62,7 +56,7 @@ or define the node yourself:
         rus_caps_word: rus_caps_word {
             compatible = "zmk,behavior-russian-capsword";
             #binding-cells = <0>;
-            continue-list = <UNDERSCORE BACKSPACE DELETE>;
+            continue-list = <MINUS BACKSPACE DELETE>;
         };
     };
 };
@@ -88,7 +82,7 @@ Example override:
 ```
 &rus_caps_word {
     mods = <MOD_LSFT>;
-    continue-list = <UNDERSCORE MINUS BACKSPACE>;
+    continue-list = <MINUS BACKSPACE DELETE>;
 };
 ```
 
@@ -98,9 +92,6 @@ Targets ZMK `v0.3` (release tag `v0.3`, branch `v0.3-branch`). Requires the mode
 `zmk_keycode_state_changed` event API (`implicit_modifiers`), available in all releases
 from `v0.1`.
 
-Like the built-in `&caps_word`, on split keyboards this behavior is compiled and runs
-on the central (left) half only; the peripheral half is unaffected. This mirrors how
-ZMK itself gates its `caps_word` behavior.
 
 ## Implementation
 
