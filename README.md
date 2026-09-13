@@ -44,7 +44,6 @@ manifest:
     path: config
 ```
 
-Then run `west update`.
 
 ### 2. Enable the behavior
 
